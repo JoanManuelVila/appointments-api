@@ -2,6 +2,7 @@ import { GetResponse } from '@classes/getResponse.class';
 import { PostPatchResponse } from '@classes/postPatchResponse.class';
 import { CreatePatientDto } from '@dtos/createPatient.dto';
 import { DataBaseErrorException } from '@exceptions/dataBaseError.exception';
+import { PatientNotFound } from '@exceptions/patientNotFound.exception';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { PatientDocument } from '@schemas/patient.schema';
@@ -35,6 +36,50 @@ export class PatientService {
       return {
         message: 'Ok',
         data: patients,
+      };
+    } catch (error) {
+      throw new DataBaseErrorException('Database error.');
+    }
+  }
+
+  async getById(id: string): Promise<GetResponse> {
+    try {
+      const patient = await this.patientModel.findById(id);
+      return {
+        message: 'Ok',
+        data: patient,
+      };
+    } catch (error) {
+      throw new PatientNotFound('Patient NotFound');
+    }
+  }
+
+  async updatePatient(
+    id: string,
+    body: Partial<CreatePatientDto>,
+  ): Promise<PostPatchResponse> {
+    try {
+      const patient = this.patientModel.findById(id);
+      await patient.update(body);
+      return {
+        message: 'Ok',
+        data: {
+          id,
+        },
+      };
+    } catch (error) {
+      throw new DataBaseErrorException('Database error.');
+    }
+  }
+
+  async deletePatient(id: string): Promise<PostPatchResponse> {
+    try {
+      await this.patientModel.findByIdAndDelete(id);
+      return {
+        message: 'Ok',
+        data: {
+          id,
+        },
       };
     } catch (error) {
       throw new DataBaseErrorException('Database error.');

@@ -5,5 +5,5 @@ export class GetResponse {
   @IsString()
   message: string;
   @ValidateNested()
-  data: Patient[];
+  data: Patient[] | Patient;
 }
