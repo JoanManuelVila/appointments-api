@@ -1,3 +1,4 @@
+import { GetResponse } from '@classes/getResponse.class';
 import { PostPatchResponse } from '@classes/postPatchResponse.class';
 import { CreatePatientDto } from '@dtos/createPatient.dto';
 import { DataBaseErrorException } from '@exceptions/dataBaseError.exception';
@@ -22,6 +23,18 @@ export class PatientService {
         data: {
           id: String(patient._id),
         },
+      };
+    } catch (error) {
+      throw new DataBaseErrorException('Database error.');
+    }
+  }
+
+  async getAll(): Promise<GetResponse> {
+    try {
+      const patients = await this.patientModel.find();
+      return {
+        message: 'Ok',
+        data: patients,
       };
     } catch (error) {
       throw new DataBaseErrorException('Database error.');
