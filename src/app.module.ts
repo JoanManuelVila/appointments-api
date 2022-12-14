@@ -9,12 +9,12 @@ import { AppService } from '@services/app.service';
     MongooseModule.forRoot('mongodb://localhost/patient'),
     MongooseModule.forFeature([
       {
-        name: "Patient",
-        schema: PatientSchema
-      }
-    ])
+        name: 'Patient',
+        schema: PatientSchema,
+      },
+    ]),
   ],
   controllers: [AppController],
-  providers: [AppService], 
+  providers: [AppService],
 })
 export class AppModule {}
