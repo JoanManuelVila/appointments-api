@@ -16,6 +16,12 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@controllers/*":["src/controllers/*"],
+      "@services/*":["src/services/*"],
+      "@schemas/*":["src/schemas/*"]
+    }
+
   }
 }

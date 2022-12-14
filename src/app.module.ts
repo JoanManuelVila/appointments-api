@@ -1,9 +1,19 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './controllers/app.controller';
-import { AppService } from './services/app.service';
+import { MongooseModule } from '@nestjs/mongoose';
+import { AppController } from '@controllers/app.controller';
+import { PatientSchema } from '@schemas/patient.schema';
+import { AppService } from '@services/app.service';
 
 @Module({
-  imports: [],
+  imports: [
+    MongooseModule.forRoot('mongodb://localhost/patient'),
+    MongooseModule.forFeature([
+      {
+        name: "Patient",
+        schema: PatientSchema
+      }
+    ])
+  ],
   controllers: [AppController],
   providers: [AppService], 
 })
