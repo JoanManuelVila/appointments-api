@@ -20,7 +20,10 @@
     "paths": {
       "@controllers/*":["src/controllers/*"],
       "@services/*":["src/services/*"],
-      "@schemas/*":["src/schemas/*"]
+      "@schemas/*":["src/schemas/*"],
+      "@dtos/*":["src/dtos/*"],
+      "@exceptions/*":["src/exceptions/*"],
+      "@classes/*":["src/classes/*"]
     }
 
   }

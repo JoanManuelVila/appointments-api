@@ -1,7 +1,7 @@
 import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 
-@Schema()
+@Schema({ timestamps: true, versionKey: false })
 export class Patient {
   @Prop({ required: true, trim: true })
   firstName: string;
@@ -12,7 +12,7 @@ export class Patient {
   @Prop({ required: true })
   birthDate: Date;
 
-  @Prop({ required: true, trim: true })
+  @Prop({ required: true, trim: true, unique: true })
   dni: string;
 
   @Prop({ trim: true })
