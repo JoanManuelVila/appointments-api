@@ -23,7 +23,8 @@
       "@schemas/*":["src/schemas/*"],
       "@dtos/*":["src/dtos/*"],
       "@exceptions/*":["src/exceptions/*"],
-      "@classes/*":["src/classes/*"]
+      "@classes/*":["src/classes/*"],
+      "@config/*":["src/config/*"]
     }
 
   }

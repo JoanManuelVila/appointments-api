@@ -1,3 +1,4 @@
+import { useSwagger } from '@config/swaggerConfig';
 import { HttpStatus } from '@nestjs/common';
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
@@ -12,6 +13,7 @@ async function bootstrap() {
       errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
     }),
   );
+  useSwagger(app);
   await app.listen(3000);
 }
 bootstrap();
