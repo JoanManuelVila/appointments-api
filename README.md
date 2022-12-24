@@ -8,14 +8,14 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Appointments and patients manager developed with NestJs, MongoDB and Docker
 
 ## Installation
 
 ```bash
 $ yarn install
 ```
-create a .env file and complete the required variables before running this commands. Also make sure you have MongoDB installed or run
+create a .env file and complete the required variables before running this commands.
 ```bash
 docker-compose --env-file .env up
 ```
@@ -45,16 +45,8 @@ $ yarn test:e2e
 $ yarn test:cov
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- Author - [Joan Manuel Vila](https://github.com/JoanManuelVila)
+- Linkedin - [@JoanManuelVila](https://www.linkedin.com/in/joan-manuel-vila-611695178/)
