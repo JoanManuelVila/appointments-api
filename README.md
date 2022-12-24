@@ -31,6 +31,7 @@
 ```bash
 $ yarn install
 ```
+create a .env file and complete the required variables before running this commands. Also make sure you have MongoDB installed or run
 ```bash
 docker-compose --env-file .env up
 ```
