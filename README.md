@@ -8,7 +8,7 @@
 
 ## Description
 
-Appointments and patients manager developed with NestJs, MongoDB and Docker
+Appointments and patients manager system developed with NestJs, MongoDB and Docker
 
 ## Installation
 
